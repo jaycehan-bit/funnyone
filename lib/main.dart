@@ -31,7 +31,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const StateObjectRoute(),
     );
   }
 }
@@ -120,6 +121,40 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class StateObjectRoute extends StatefulWidget {
+  const StateObjectRoute({Key? key}) : super(key: key);
+  @override
+  State<StateObjectRoute> createState() => StateObjectRouteState();
+}
+
+class StateObjectRouteState extends State<StateObjectRoute> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("子树获取State对象"),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            Builder(builder: (context) {
+              return ElevatedButton(
+                onPressed: () {
+                  ScaffoldState _state =
+                      context.findAncestorStateOfType<ScaffoldState>()!;
+                  _state.openDrawer();
+                },
+                child: Text('打开'),
+              );
+            }),
+          ],
+        ),
+      ),
+      drawer: Drawer(),
     );
   }
 }
