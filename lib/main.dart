@@ -144,11 +144,32 @@ class StateObjectRouteState extends State<StateObjectRoute> {
             Builder(builder: (context) {
               return ElevatedButton(
                 onPressed: () {
+                  // 使用-findAncestorStateOfType方法获取state
                   ScaffoldState _state =
                       context.findAncestorStateOfType<ScaffoldState>()!;
                   _state.openDrawer();
                 },
-                child: Text('打开'),
+                child: Text('打开菜单1'),
+              );
+            }),
+            Builder(builder: (context) {
+              return ElevatedButton(
+                onPressed: () {
+                  // 使用of静态方法获取state
+                  ScaffoldState _state = Scaffold.of(context);
+                  _state.openDrawer();
+                },
+                child: Text('打开菜单2'),
+              );
+            }),
+            Builder(builder: (context) {
+              return ElevatedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('This is a snackBar')),
+                  );
+                },
+                child: Text('打开snackBar'),
               );
             }),
           ],
