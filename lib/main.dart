@@ -172,10 +172,37 @@ class StateObjectRouteState extends State<StateObjectRoute> {
                 child: Text('打开snackBar'),
               );
             }),
+            Builder(builder: (context) {
+              return TextButton(
+                child: Text('open new route'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return SecondRoute();
+                    }),
+                  );
+                },
+              );
+            }),
           ],
         ),
       ),
       drawer: Drawer(),
+    );
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('SecondRoute'),
+      ),
+      body: Center(
+        child: Text('This is a new route'),
+      ),
     );
   }
 }
