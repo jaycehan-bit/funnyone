@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'UIControl/UIControl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -179,7 +180,8 @@ class StateObjectRouteState extends State<StateObjectRoute> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) {
-                      return SecondRoute();
+                      // return SecondRoute();
+                      return UIControlPage();
                     }),
                   );
                 },
