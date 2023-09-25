@@ -30,7 +30,7 @@ class UIControlPageState extends State<UIControlPage> {
       body: Center(
         child: Column(
           children: [
-            Text(
+            const Text(
               // 文本内容
               'This is a Text',
               // 对齐方式
@@ -47,7 +47,7 @@ class UIControlPageState extends State<UIControlPage> {
                 fontFamily: "Courier",
               ),
             ),
-            Text.rich(
+            const Text.rich(
               TextSpan(children: [
                 TextSpan(
                   text: 'Home: ',
@@ -61,29 +61,29 @@ class UIControlPageState extends State<UIControlPage> {
                 ),
               ]),
             ),
-            ElevatedButton(
+            const ElevatedButton(
               onPressed: null,
               child: Row(
                 children: [Text('This is a ElevatedButton')],
               ),
             ),
-            TextButton(
+            const TextButton(
               onPressed: null,
               child: Row(
                 children: [Text('This a TextButton')],
               ),
             ),
-            OutlinedButton(
+            const OutlinedButton(
                 onPressed: null, child: Text('This is a OutlinedButton')),
-            IconButton(
+            const IconButton(
               onPressed: null,
               icon: Icon(Icons.thumb_down),
             ),
-            Image(
+            const Image(
               image: AssetImage("images/send.png"),
               width: 60.0,
             ),
-            Image(
+            const Image(
               image: NetworkImage(
                   'https://git.woa.com/uploads/user/avatar/21311/5527e9b8c073413fbb1553aea3a153f9.jpg'),
               width: 60.0,
@@ -105,6 +105,23 @@ class UIControlPageState extends State<UIControlPage> {
                   _checkBoxSelected = value ?? false;
                 });
               },
+            ),
+            const TextField(
+              autofocus: true,
+              decoration: InputDecoration(
+                labelText: 'username',
+                hintText: 'Username or Email',
+                prefixIcon: Icon(Icons.person),
+              ),
+            ),
+            const TextField(
+              autofocus: true,
+              obscureText: true,
+              decoration: InputDecoration(
+                labelText: 'password',
+                hintText: 'Your password',
+                prefixIcon: Icon(Icons.lock),
+              ),
             ),
           ],
         ),
