@@ -1,8 +1,23 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
 
-class UIControlPage extends StatelessWidget {
+class UIControlPage extends StatefulWidget {
   const UIControlPage({super.key});
+  @override
+  State<StatefulWidget> createState() {
+    return UIControlPageState();
+  }
+}
+
+class UIControlPageState extends State<UIControlPage> {
+  late bool _switchSelected;
+  late bool _checkBoxSelected;
+  @override
+  void initState() {
+    super.initState();
+    _switchSelected = true;
+    _checkBoxSelected = true;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +27,7 @@ class UIControlPage extends StatelessWidget {
           'UIControlPage',
         ),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           children: [
             Text(
@@ -72,6 +87,24 @@ class UIControlPage extends StatelessWidget {
               image: NetworkImage(
                   'https://git.woa.com/uploads/user/avatar/21311/5527e9b8c073413fbb1553aea3a153f9.jpg'),
               width: 60.0,
+            ),
+            Switch(
+              activeColor: Colors.pinkAccent,
+              value: _switchSelected,
+              onChanged: (value) {
+                setState(() {
+                  _switchSelected = value;
+                });
+              },
+            ),
+            Checkbox(
+              activeColor: Colors.redAccent,
+              value: _checkBoxSelected,
+              onChanged: (value) {
+                setState(() {
+                  _checkBoxSelected = value ?? false;
+                });
+              },
             ),
           ],
         ),
