@@ -46,6 +46,33 @@ class UIControlPage extends StatelessWidget {
                 ),
               ]),
             ),
+            ElevatedButton(
+              onPressed: null,
+              child: Row(
+                children: [Text('This is a ElevatedButton')],
+              ),
+            ),
+            TextButton(
+              onPressed: null,
+              child: Row(
+                children: [Text('This a TextButton')],
+              ),
+            ),
+            OutlinedButton(
+                onPressed: null, child: Text('This is a OutlinedButton')),
+            IconButton(
+              onPressed: null,
+              icon: Icon(Icons.thumb_down),
+            ),
+            Image(
+              image: AssetImage("images/send.png"),
+              width: 60.0,
+            ),
+            Image(
+              image: NetworkImage(
+                  'https://git.woa.com/uploads/user/avatar/21311/5527e9b8c073413fbb1553aea3a153f9.jpg'),
+              width: 60.0,
+            ),
           ],
         ),
       ),
