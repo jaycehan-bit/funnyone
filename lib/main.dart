@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'UIControl/UIControl.dart';
+import 'Layout/Layout.dart';
 
 void main() {
   runApp(const MyApp());
@@ -181,7 +182,8 @@ class StateObjectRouteState extends State<StateObjectRoute> {
                     context,
                     MaterialPageRoute(builder: (context) {
                       // return SecondRoute();
-                      return UIControlPage();
+                      // return UIControlPage();
+                      return JCLayoutPage();
                     }),
                   );
                 },

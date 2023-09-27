@@ -12,11 +12,13 @@ class UIControlPage extends StatefulWidget {
 class UIControlPageState extends State<UIControlPage> {
   late bool _switchSelected;
   late bool _checkBoxSelected;
+  late TextEditingController _textEditingController;
   @override
   void initState() {
     super.initState();
     _switchSelected = true;
     _checkBoxSelected = true;
+    _textEditingController = TextEditingController();
   }
 
   @override
@@ -106,9 +108,10 @@ class UIControlPageState extends State<UIControlPage> {
                 });
               },
             ),
-            const TextField(
+            TextField(
               autofocus: true,
-              decoration: InputDecoration(
+              controller: _textEditingController,
+              decoration: const InputDecoration(
                 labelText: 'username',
                 hintText: 'Username or Email',
                 prefixIcon: Icon(Icons.person),
