@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'UIControl/UIControl.dart';
 import 'Layout/Layout.dart';
+import 'Layout/FlexLayout.dart';
 
 void main() {
   runApp(const MyApp());
@@ -183,7 +184,8 @@ class StateObjectRouteState extends State<StateObjectRoute> {
                     MaterialPageRoute(builder: (context) {
                       // return SecondRoute();
                       // return UIControlPage();
-                      return JCLayoutPage();
+                      // return JCLayoutPage();
+                      return FlexLayoutWidget();
                     }),
                   );
                 },
