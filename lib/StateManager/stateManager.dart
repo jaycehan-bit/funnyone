@@ -55,8 +55,8 @@ class TapBoxB extends StatelessWidget {
     return GestureDetector(
       onTap: _handleTap,
       child: Container(
-        child: const Center(
-          child: const Text(
+        child: Center(
+          child: Text(
             active ? 'Active' : 'Inactive',
             style: TextStyle(fontSize: 15, color: Colors.white),
           ),
