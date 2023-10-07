@@ -35,7 +35,65 @@ class JCLayoutPage extends StatelessWidget {
                 decoration: BoxDecoration(color: Colors.orange),
               ),
             ),
-          )
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            textDirection: TextDirection.ltr,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'jayce',
+                    style: TextStyle(
+                      backgroundColor: Colors.amberAccent,
+                      color: Colors.blueAccent,
+                    ),
+                  ),
+                  Text(
+                    'han',
+                    style: TextStyle(
+                      backgroundColor: Colors.amberAccent,
+                      color: Colors.blueAccent,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'jayce',
+                  ),
+                  Text('han'),
+                ],
+              ),
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'jayce',
+                  ),
+                  Text('han'),
+                ],
+              ),
+            ],
+          ),
+          const Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            textDirection: TextDirection.ltr,
+            verticalDirection: VerticalDirection.down,
+            children: [
+              Text('jayce'),
+              Text('han'),
+            ],
+          ),
         ],
       ),
     );
